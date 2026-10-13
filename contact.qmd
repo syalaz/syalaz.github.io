@@ -9,6 +9,6 @@ pagetitle: "Contact · Seray Yalaz"
 Placeholder Institution<br />
 Placeholder Department, Office Placeholder<br />
 Placeholder City, State ZIP<br />
-<a href="mailto:placeholder@example.edu">placeholder@example.edu</a>
+<a href="mailto:sy2425a@american.edu">sy2425a@american.edu</a>
 </p>
 </div>
