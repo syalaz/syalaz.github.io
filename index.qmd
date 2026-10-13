@@ -1,7 +1,22 @@
 ---
-title: "seray-academic-website"
+pagetitle: "Seray Yalaz"
 ---
 
-This is a Quarto website.
+<div class="wrapper">
+<div class="hero">
+<div class="photo-frame">
+<img src="images/profile-placeholder.svg" alt="Placeholder portrait of Seray Yalaz" />
+</div>
+<div class="hero-text">
+<h1 class="hero-name">Seray Yalaz</h1>
+<p class="role">Assistant Professor of [Field] · [Institution]</p>
+<p class="tagline">Placeholder tagline describing Seray Yalaz's research focus in one sentence.</p>
+</div>
+</div>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<p>Placeholder biography paragraph one. This is where a short introduction of Seray Yalaz's academic background, appointment, and research area will go, written in the same tone as the reference site's opening bio paragraph.</p>
+
+<p>Placeholder biography paragraph two, describing methodological approach and the two or three substantive research questions Seray's work addresses.</p>
+
+<p>Placeholder biography paragraph three, covering collaborations, affiliations, or other professional context to be filled in later.</p>
+</div>

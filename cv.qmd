@@ -1,0 +1,17 @@
+---
+pagetitle: "CV · Seray Yalaz"
+---
+
+<div class="wrapper">
+<div class="hero-text">
+<h1 class="hero-name">CV</h1>
+<p class="tagline">The full CV is coming soon. Check back later, or see the <a href="research.qmd">publications list</a> in the meantime.</p>
+</div>
+
+<p class="edu-label">Education</p>
+<div class="edu-grid">
+<p class="edu-degree">Ph.D.</p><p>Placeholder Field, Placeholder University · Year</p>
+<p class="edu-degree">M.A.</p><p>Placeholder Field, Placeholder University · Year</p>
+<p class="edu-degree">B.A.</p><p>Placeholder Field, Placeholder University · Year</p>
+</div>
+</div>

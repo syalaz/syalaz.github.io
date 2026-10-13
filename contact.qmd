@@ -1,0 +1,14 @@
+---
+pagetitle: "Contact · Seray Yalaz"
+---
+
+<div class="wrapper">
+<h1>Contact</h1>
+
+<p class="contact-block">
+Placeholder Institution<br />
+Placeholder Department, Office Placeholder<br />
+Placeholder City, State ZIP<br />
+<a href="mailto:placeholder@example.edu">placeholder@example.edu</a>
+</p>
+</div>

@@ -2,20 +2,14 @@ project:
   type: website
 
 website:
-  title: "seray-academic-website"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  title: "Seray Yalaz"
+  search: false
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: none
+    page-layout: custom
     css: styles.css
-    toc: true
-
-
-
+    include-in-header: partials/head.html
+    include-before-body: partials/nav.html
+    include-after-body: partials/footer.html

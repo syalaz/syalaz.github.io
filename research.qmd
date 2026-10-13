@@ -1,0 +1,30 @@
+---
+pagetitle: "Research · Seray Yalaz"
+---
+
+<div class="wrapper">
+<h1>Research</h1>
+
+<div class="pub">
+<p class="pub-title"><a href="#">Placeholder Publication Title One: A Study of Something Interesting</a></p>
+<p class="pub-journal">Placeholder Journal Name · 2026</p>
+<p class="pub-authors">with Placeholder Coauthor One and Placeholder Coauthor Two</p>
+<p class="pub-links"><a href="#">PDF</a><a href="#">Replication data</a><span class="award-tag">Placeholder Award</span></p>
+</div>
+
+<div class="pub">
+<p class="pub-title"><a href="#">Placeholder Publication Title Two: Another Illustrative Example</a></p>
+<p class="pub-journal">Placeholder Journal Name · 2025</p>
+<p class="pub-authors">with Placeholder Coauthor Three</p>
+<p class="pub-links"><a href="#">PDF</a><a href="#">Replication data</a></p>
+</div>
+
+<div class="pub">
+<p class="pub-title"><a href="#">Placeholder Publication Title Three: A Working Paper</a></p>
+<p class="pub-journal">Placeholder Journal Name · 2024</p>
+<p class="pub-authors">Sole-authored</p>
+<p class="pub-links"><a href="#">PDF</a></p>
+</div>
+
+<p><a href="cv.qmd">Full publication and working papers listed in CV →</a></p>
+</div>
