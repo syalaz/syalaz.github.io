@@ -5,7 +5,7 @@ pagetitle: "Seray Yalaz"
 <div class="wrapper">
 <div class="hero">
 <div class="photo-frame">
-<img src="images/profile-placeholder.svg" alt="Placeholder portrait of Seray Yalaz" />
+<img src="images/seray-yalaz.jpg" alt="Portrait of Seray Yalaz" />
 </div>
 <div class="hero-text">
 <h1 class="hero-name">Seray Yalaz</h1>
