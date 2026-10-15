@@ -20,6 +20,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Build CV PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Seray_Yalaz_CV.tex
+          working_directory: cv
       - uses: quarto-dev/quarto-actions/setup@v2
       - uses: quarto-dev/quarto-actions/render@v2
       - uses: actions/upload-pages-artifact@v3

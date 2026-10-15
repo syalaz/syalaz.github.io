@@ -2,16 +2,141 @@
 pagetitle: "CV · Seray Yalaz"
 ---
 
-<div class="wrapper">
-<div class="hero-text">
+<div class="wrapper wrapper-wide">
 <h1 class="hero-name">CV</h1>
-<p class="tagline">The full CV is coming soon. Check back later, or see the <a href="research.qmd">publications list</a> in the meantime.</p>
+
+```{=html}
+<div class="cv-viewer" id="cv-viewer">
+<div class="cv-toolbar">
+<div class="cv-tools">
+<button type="button" class="cv-btn" id="cv-fullscreen"><i class="fa-solid fa-expand"></i> <span>Full Screen</span></button>
+<a class="cv-btn" href="cv/Seray_Yalaz_CV.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab</a>
+</div>
+<a class="cv-btn" href="cv/Seray_Yalaz_CV.pdf" download="Seray_Yalaz_CV.pdf"><i class="fa-solid fa-download"></i> Download</a>
+</div>
+<div class="cv-pages" id="cv-pages"><p class="cv-loading">Loading CV…</p></div>
+</div>
+```
 </div>
 
-<p class="edu-label">Education</p>
-<div class="edu-grid">
-<p class="edu-degree">Ph.D.</p><p>Placeholder Field, Placeholder University · Year</p>
-<p class="edu-degree">M.A.</p><p>Placeholder Field, Placeholder University · Year</p>
-<p class="edu-degree">B.A.</p><p>Placeholder Field, Placeholder University · Year</p>
-</div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function () {
+  var PDF_URL = "cv/Seray_Yalaz_CV.pdf";
+  var MAX_PAGE_WIDTH = 1000;
+  var viewer = document.getElementById("cv-viewer");
+  var pages = document.getElementById("cv-pages");
+  var fsButton = document.getElementById("cv-fullscreen");
+  var pdfDoc = null;
+  var renderId = 0;
+  var lastWidth = 0;
+
+  // If PDF.js can't load, fall back to the browser's own PDF viewer
+  function showFallback() {
+    pages.innerHTML = '<iframe class="cv-frame" src="' + PDF_URL + '#view=FitH" title="Seray Yalaz CV"></iframe>';
+  }
+
+  function pageWidth() {
+    var style = getComputedStyle(pages);
+    var inner = pages.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    return Math.min(inner, MAX_PAGE_WIDTH);
+  }
+
+  function renderAll() {
+    var id = ++renderId;
+    var width = pageWidth();
+    lastWidth = width;
+    pages.innerHTML = "";
+    var chain = Promise.resolve();
+    for (var n = 1; n <= pdfDoc.numPages; n++) {
+      chain = chain.then(renderPage.bind(null, n, width, id));
+    }
+  }
+
+  function renderPage(num, width, id) {
+    return pdfDoc.getPage(num).then(function (page) {
+      if (id !== renderId) return;
+      var viewport = page.getViewport({ scale: width / page.getViewport({ scale: 1 }).width });
+      var ratio = window.devicePixelRatio || 1;
+
+      var sheet = document.createElement("div");
+      sheet.className = "cv-page";
+      sheet.style.width = viewport.width + "px";
+      sheet.style.height = viewport.height + "px";
+
+      var canvas = document.createElement("canvas");
+      canvas.width = Math.floor(viewport.width * ratio);
+      canvas.height = Math.floor(viewport.height * ratio);
+      sheet.appendChild(canvas);
+      pages.appendChild(sheet);
+
+      var drawn = page.render({
+        canvasContext: canvas.getContext("2d"),
+        viewport: viewport,
+        transform: ratio !== 1 ? [ratio, 0, 0, ratio, 0, 0] : null
+      }).promise;
+
+      // Keep the CV's links (email, Google Scholar, ...) clickable
+      return Promise.all([drawn, page.getAnnotations()]).then(function (results) {
+        results[1].forEach(function (note) {
+          if (note.subtype !== "Link" || !note.url) return;
+          var r = viewport.convertToViewportRectangle(note.rect);
+          var link = document.createElement("a");
+          link.className = "cv-link";
+          link.href = note.url;
+          if (note.url.indexOf("mailto:") !== 0) {
+            link.target = "_blank";
+            link.rel = "noopener";
+          }
+          link.style.left = Math.min(r[0], r[2]) + "px";
+          link.style.top = Math.min(r[1], r[3]) + "px";
+          link.style.width = Math.abs(r[2] - r[0]) + "px";
+          link.style.height = Math.abs(r[3] - r[1]) + "px";
+          sheet.appendChild(link);
+        });
+      });
+    });
+  }
+
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
+      pdfDoc = pdf;
+      renderAll();
+    }).catch(showFallback);
+  } else {
+    showFallback();
+  }
+
+  // Re-draw at the new size when the window or full screen state changes
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (pdfDoc && Math.abs(pageWidth() - lastWidth) > 1) renderAll();
+    }, 200);
+  });
+
+  fsButton.addEventListener("click", function () {
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else if (viewer.requestFullscreen) {
+      viewer.requestFullscreen();
+    } else if (viewer.webkitRequestFullscreen) {
+      viewer.webkitRequestFullscreen();
+    } else {
+      // e.g. iPhone Safari, which can't make part of a page full screen
+      window.open(PDF_URL, "_blank");
+    }
+  });
+
+  function onFullscreenChange() {
+    var full = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    fsButton.querySelector("span").textContent = full ? "Exit Full Screen" : "Full Screen";
+    fsButton.querySelector("i").className = full ? "fa-solid fa-compress" : "fa-solid fa-expand";
+  }
+  document.addEventListener("fullscreenchange", onFullscreenChange);
+  document.addEventListener("webkitfullscreenchange", onFullscreenChange);
+})();
+</script>

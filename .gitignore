@@ -1,3 +1,10 @@
 /.quarto/
 **/*.quarto_ipynb
 /_site/
+
+# LaTeX build output (the CV PDF is built by GitHub Actions)
+/cv/*
+!/cv/*.tex
+
+# macOS folder metadata
+.DS_Store

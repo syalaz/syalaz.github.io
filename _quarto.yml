@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - cv/Seray_Yalaz_CV.pdf
 
 website:
   title: "Seray Yalaz"

@@ -2,29 +2,71 @@
 pagetitle: "Research · Seray Yalaz"
 ---
 
-<div class="wrapper">
+```{=html}
+<div class="wrapper wrapper-research">
 <h1>Research</h1>
 
-<div class="pub">
-<p class="pub-title"><a href="#">Placeholder Publication Title One: A Study of Something Interesting</a></p>
-<p class="pub-journal">Placeholder Journal Name · 2026</p>
-<p class="pub-authors">with Placeholder Coauthor One and Placeholder Coauthor Two</p>
-<p class="pub-links"><a href="#">PDF</a><a href="#">Replication data</a><span class="award-tag">Placeholder Award</span></p>
+<section class="research-section">
+<h2>Peer-reviewed Publications</h2>
+
+<article class="pub-card">
+<p class="pub-title"><a href="https://academic.oup.com/jpr/article/63/3/362/8524882" target="_blank" rel="noopener">Bidding for governance: Rebel vs. state labor-retention strategies in conflicts</a></p>
+<p class="pub-authors"><strong>Yalaz, S.</strong>, Tokdemir, E., &amp; Akcinaroglu, S.</p>
+<p class="pub-journal">Journal of Peace Research, 63(3), 362–375 · 2026</p>
+<ul class="pub-keywords" aria-label="Keywords"><li>rebel governance</li><li>predatory governance</li><li>state concessions</li><li>competition</li><li>labor dependency</li><li>profit</li></ul>
+<div class="pub-actions">
+<button type="button" class="pub-toggle" aria-expanded="false">Abstract</button>
+<a href="https://academic.oup.com/jpr/article/63/3/362/8524882" target="_blank" rel="noopener">Article</a>
+<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CCMW1V" target="_blank" rel="noopener">Replication data</a>
+</div>
+<div class="pub-abstract" hidden>
+<p>This article examines the competing bids of rebel organizations and state authorities over the rights to extract and market natural resources. It highlights the pivotal role of profit in establishing rebel governance and eliciting state responses, challenging traditional views that governance is solely legitimacy seeking and that resource profits inherently hinder governance. We introduce a novel framework categorizing natural resources based on their labor dependency, determined by levels of mechanization and stages of extraction. This framework highlights the economic battleground where rebels and states not only compete for resource profits but also strategize for control: one through the establishment of quasi-state institutions, and the other through concessions aimed at constituencies claimed by rebels. These strategies aim to incorporate and retain labor and outputs under their authority, asserting economic and regulatory advantages. Utilizing existing datasets on rebel governance and natural resource extraction, as well as a novel dataset on state concessions to rebel constituencies, the findings demonstrate that when rebel organizations profit from labor-dependent resources, it incentivizes both rebels and states to govern constituents. However, the extent of competition over resource control moderates the diversification of rebel and state strategies, as findings show that warring actors diversify their retention strategies only when they have a competitive advantage. Our findings demonstrate how the socioeconomic context influences the behavior of rebel organizations and states, as well as their engagement with civilian populations.</p>
+</div>
+</article>
+
+<article class="pub-card">
+<p class="pub-title"><a href="https://www.bloomsbury.com/us/what-do-we-know-about-terrorism-9798765151990/" target="_blank" rel="noopener">Definitions of terrorism</a></p>
+<p class="pub-authors"><strong>Yalaz, S.</strong>, &amp; Young, J. K.</p>
+<p class="pub-journal">In B. J. Phillips (Ed.), What Do We Know about Terrorism? Bloomsbury Academic · Forthcoming</p>
+<ul class="pub-keywords" aria-label="Keywords"><li>terrorism</li><li>defining terrorism</li><li>counterterrorism</li><li>concepts</li><li>conceptual stretching</li></ul>
+<div class="pub-actions">
+<button type="button" class="pub-toggle" aria-expanded="false">Abstract</button>
+<a href="https://www.bloomsbury.com/us/what-do-we-know-about-terrorism-9798765151990/" target="_blank" rel="noopener">Pre-order</a>
+</div>
+<div class="pub-abstract" hidden>
+<p>This chapter examines the debates over defining terrorism and the consequences of conceptual ambiguity. It frames the definitional debates on terrorism through the distinct purposes academic, political, and legal definitions serve. It argues that, in the absence of legal or scientific consensus, definitions are best understood as more or less useful depending on their intended purpose. Drawing on over 250 academic, governmental, and intergovernmental definitions, the chapter employs a text analysis to map the frequency and co-occurrence of key concepts, revealing patterns of “family resemblance” across definitions. Prominent and frequently co-occurring elements such as violence, political motivation, intent to instill fear, and threat shape recurring themes, while the chapter calls attention to the risks of conceptual stretching and the importance of distinguishing terrorism from other forms of violence. It concludes by discussing proposed “types” of terrorism to maintain conceptual and analytical precision in both research and policy.</p>
+</div>
+</article>
+</section>
+
+<section class="research-section">
+<h2>Working Paper</h2>
+<ul class="paper-list">
+<li><span class="paper-title">Business–State Security Collaboration and Rebel Targeting in Colombia's Oil Sector</span><span class="jmp-tag">Job Market Paper</span></li>
+</ul>
+</section>
+
+<section class="research-section">
+<h2>Work in Progress</h2>
+<ul class="paper-list">
+<li><span class="paper-title">Who Gets Left in the Dark? Rebel Governance and Electricity Infrastructure Targeting</span></li>
+<li><span class="paper-title">Revenue Shocks and Financial Adaptation in Insurgent Organizations</span></li>
+<li><span class="paper-title">Rebel Tactics, Diaspora Response: Exploring Diaspora Support in Civil Wars</span><span class="paper-note">with Muge Uguz</span></li>
+</ul>
+</section>
+
+<p class="research-cv-link"><a href="cv.qmd">See the full CV →</a></p>
 </div>
 
-<div class="pub">
-<p class="pub-title"><a href="#">Placeholder Publication Title Two: Another Illustrative Example</a></p>
-<p class="pub-journal">Placeholder Journal Name · 2025</p>
-<p class="pub-authors">with Placeholder Coauthor Three</p>
-<p class="pub-links"><a href="#">PDF</a><a href="#">Replication data</a></p>
-</div>
-
-<div class="pub">
-<p class="pub-title"><a href="#">Placeholder Publication Title Three: A Working Paper</a></p>
-<p class="pub-journal">Placeholder Journal Name · 2024</p>
-<p class="pub-authors">Sole-authored</p>
-<p class="pub-links"><a href="#">PDF</a></p>
-</div>
-
-<p><a href="cv.qmd">Full publication and working papers listed in CV →</a></p>
-</div>
+<script>
+  // Show or hide each publication's abstract
+  document.querySelectorAll(".pub-toggle").forEach(function (button) {
+    var abstract = button.closest(".pub-card").querySelector(".pub-abstract");
+    button.addEventListener("click", function () {
+      var open = abstract.hidden;
+      abstract.hidden = !open;
+      button.setAttribute("aria-expanded", String(open));
+    });
+  });
+</script>
+```

@@ -1,8 +1,37 @@
 <nav class="site-nav">
   <a class="site-name" href="index.qmd">Seray Yalaz</a>
   <div class="nav-links">
+    <a href="index.qmd" class="nav-home" title="Home" aria-label="Home"><i class="fa-solid fa-house"></i></a>
     <a href="research.qmd">Research</a>
-    <a href="contact.qmd">Contact</a>
     <a href="cv.qmd">CV</a>
+    <a href="contact.qmd">Contact</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
   </div>
 </nav>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById("theme-toggle");
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function currentTheme() {
+      return root.getAttribute("data-theme") || (prefersDark.matches ? "dark" : "light");
+    }
+    function syncButton() {
+      var dark = currentTheme() === "dark";
+      button.querySelector("i").className = dark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      var label = dark ? "Switch to light mode" : "Switch to dark mode";
+      button.setAttribute("aria-label", label);
+      button.title = label;
+    }
+
+    button.addEventListener("click", function () {
+      var next = currentTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      syncButton();
+    });
+    prefersDark.addEventListener("change", syncButton);
+    syncButton();
+  })();
+</script>

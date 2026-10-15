@@ -1,0 +1,426 @@
+% ================================================================
+% SERAY YALAZ - ACADEMIC CV
+% ================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=0.67in,bottom=0.62in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% ---------- Colors and PDF links ----------
+\definecolor{linkpurple}{HTML}{6652B8}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkpurple,
+  linkcolor=linkpurple,
+  citecolor=linkpurple,
+  pdfauthor={Seray Yalaz},
+  pdftitle={Seray Yalaz - Curriculum Vitae}
+}
+
+% ---------- Page style ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage\ of \pageref*{LastPage}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{20pt}
+
+\raggedbottom
+\emergencystretch=2em
+
+% ---------- Layout controls ----------
+\newlength{\labelcol}
+\setlength{\labelcol}{1.28in}
+
+\newlength{\colgap}
+\setlength{\colgap}{0.18in}
+
+\newcommand{\cvrow}[2]{%
+  \noindent
+  \begin{minipage}[t]{\labelcol}
+    \vspace{0pt}
+    \raggedright\textsc{#1}
+  \end{minipage}%
+  \hspace{\colgap}%
+  \begin{minipage}[t]{%
+    \dimexpr\textwidth-\labelcol-\colgap\relax
+  }
+    \vspace{0pt}
+    \raggedright #2
+  \end{minipage}\par
+}
+
+\newcommand{\datedline}[2]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{%
+    @{}
+    >{\raggedright\arraybackslash}X
+    >{\raggedleft\arraybackslash\small}p{1.65in}
+    @{}
+  }
+    #1 & #2
+  \end{tabularx}\par
+}
+
+\newcommand{\entrygap}{\vspace{0.75em}}
+\newcommand{\sectiongap}{\vspace{1.30em}}
+\newcommand{\journal}[1]{\textbf{\textit{#1}}}
+
+\begin{document}
+
+% ================================================================
+% NAME
+% ================================================================
+
+{\centering
+  {\fontsize{28}{31}\selectfont Seray Yalaz\par}
+  \vspace{0.55em}
+  {\large Ph.D. Candidate\par}
+}
+
+\vspace{0.45em}
+\noindent\hfill{\small Last revised: September 2026}\par
+
+\vspace{0.35em}
+\hrule
+\vspace{0.75em}
+
+% ================================================================
+% CONTACT
+% ================================================================
+
+\cvrow{Contact}{%
+  \begin{tabularx}{\linewidth}{@{}X l@{}}
+    American University
+      & \faIcon{envelope}\enspace
+        \href{mailto:sy2425a@american.edu}
+        {sy2425a@american.edu} \\
+
+    School of International Service
+      & \faIcon{graduation-cap}\enspace
+        \href{https://scholar.google.com/citations?user=lGihxTkAAAAJ\&hl=en\&oi=ao}
+        {Google Scholar} \\
+
+    Washington, DC 20016, United States
+      & \faIcon{globe}\enspace
+        \href{https://syalaz.github.io/seray-academic-website/}
+        {Website}
+  \end{tabularx}
+}
+
+\vspace{1.85em}
+
+% ================================================================
+% EDUCATION
+% ================================================================
+
+\cvrow{Education}{%
+  \datedline{%
+    \textbf{Ph.D. in International Relations}
+  }{2022--present}
+
+  American University, School of International Service\\
+  Washington, DC, United States\\
+  Expected May 2027
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{M.A. in International Relations}
+  }{2022}
+
+  Bilkent University, Graduate School of Economics and Social Sciences\\
+  Ankara, Turkey
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{B.A. in International Relations}
+  }{2020}
+
+  Bilkent University, Faculty of Economics, Administrative and
+  Social Sciences\\
+  Department of International Relations, Ankara, Turkey
+}
+
+\sectiongap
+
+% ================================================================
+% PEER-REVIEWED PUBLICATIONS
+% All entries sit inside one row so spacing stays even.
+% ================================================================
+
+\cvrow{Peer-reviewed\\Publications}{%
+  \textbf{Yalaz, S.}, Tokdemir, E., \& Akcinaroglu, S. (2026).
+  \href{https://academic.oup.com/jpr/article/63/3/362/8524882}{Bidding
+  for governance: Rebel vs. state labor-retention strategies
+  in conflicts}.
+  \journal{Journal of Peace Research}, 63(3), 362--375.\\[0.75em]
+  \textbf{Yalaz, S.}, \& Young, J. K. (2026).
+  Definitions of terrorism.
+  In B. J. Phillips (Ed.),
+  \href{https://www.bloomsbury.com/us/what-do-we-know-about-terrorism-9798765151990/}{\textit{What Do We Know about Terrorism?}}
+  Bloomsbury Academic. Forthcoming.
+}
+
+\sectiongap
+
+% ===================== WORKING PAPER =====================
+
+\cvrow{Working\\Paper}{%
+  ``Business--State Security Collaboration and Rebel Targeting
+  in Colombia's Oil Sector''\\
+  {\small (Job Market Paper)}
+}
+
+\sectiongap
+
+% =================== WORK IN PROGRESS ====================
+
+\cvrow{Work in\\Progress}{%
+  ``Who Gets Left in the Dark? Rebel Governance and
+  Electricity Infrastructure Targeting''\\[0.75em]
+  ``Revenue Shocks and Financial Adaptation in Insurgent
+  Organizations''\\[0.75em]
+  ``Rebel Tactics, Diaspora Response: Exploring Diaspora Support
+  in Civil Wars'' \textit{with Muge Uguz}
+}
+
+\sectiongap
+
+% ================================================================
+% WORKSHOPS
+% ================================================================
+
+\cvrow{Workshops}{%
+  \datedline{%
+    \textbf{Using Large Language Models (LLMs) and Other AI Tools
+    to Gather and Analyze Political Elite Networks}
+  }{7--10 Apr. 2026}
+
+  European Consortium for Political Research (ECPR)
+  Joint Sessions of Workshops\\
+  University of Innsbruck, Austria
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Bridging the Gap}
+  }{25--27 Sep. 2025}
+
+  New Era Workshop (NEW)\\
+  Josef Korbel School of Global and Public Affairs,
+  University of Denver
+}
+
+\sectiongap
+
+% ================================================================
+% SELECTED CONFERENCE PRESENTATIONS
+% Each presentation is a separate row so the section can span pages.
+% ================================================================
+
+\cvrow{Selected\\Conference\\Presentations}{%
+  \datedline{%
+    \textbf{Business--State Security Collaboration and Rebel
+    Targeting in Colombia's Oil Sector}
+  }{3--6 Sep. 2026}
+
+  Presented at the 2026 American Political Science Association
+  Annual Meeting \& Exhibition, Boston, Massachusetts.
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Definitions of Terrorism}
+  }{31 Mar.--1 Apr. 2025}
+
+  With Joseph K. Young, University of Kentucky\\
+  Presented at the 2025 Shambaugh Conference,
+  \textit{What Do We Know About Terrorism?},
+  University of Iowa.
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Rebel Tactics, Diaspora Response:
+    Exploring Diaspora Support in Civil Wars}
+  }{2025}
+
+  With Muge Uguz, George Washington University\\
+  Presented at the 2025 International Studies Association
+  Annual Convention, Chicago, Illinois.\\
+  \textbf{Panel organizer:}
+  \textit{Rebel Interactions in Multilevel Conflict Dynamics}.
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Economic and Social Dynamics of Rebel Behavior:
+    A Categorization of Natural Resources and Service Sector
+    Investments in Conflict Zones}
+  }{2024}
+
+  With Efe Tokdemir, Bilkent University, and
+  Seden Akcinaroglu, Binghamton University\\
+  Presented at the Jan Tinbergen European Peace Science Conference,
+  Dublin, Ireland.
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Economic and Social Dynamics of Rebel Behavior:
+    Extortion of Contraband Resources and Rebel--Civilian
+    Relations in Conflict Zones}
+  }{2024}
+
+  Presented at the Eurasian Peace Science Conference,
+  Ankara, Turkey.
+}
+
+\sectiongap
+
+% ================================================================
+% RESEARCH EXPERIENCE
+% ================================================================
+
+\cvrow{Research\\Experience}{%
+  \datedline{%
+    \textbf{Research Fellow},
+    Research on International Policy Implementation Lab (RIPIL)
+  }{May--Sep. 2024}
+
+  American University, Washington, DC\\
+  \textit{Networks of Influence Project}
+}
+
+\sectiongap
+
+% ================================================================
+% TEACHING
+% ================================================================
+
+\cvrow{Teaching}{%
+  \textbf{Teaching Assistant, American University:}
+  \textit{Introduction to International Studies (SISU-105)}
+  (Fall 2024, Spring 2025).
+}
+
+\sectiongap
+
+% ================================================================
+% GRANTS AND SCHOLARSHIPS
+% ================================================================
+
+\cvrow{Grants \&\\Scholarships}{%
+  \datedline{%
+    \textbf{Summer Research Award},
+    American University School of International Service
+  }{2026}
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{SIS Ph.D. Methods Training Grant},
+    American University School of International Service
+  }{Summer 2025}
+
+  Funding for the Inter-university Consortium for Political and
+  Social Research (ICPSR) Summer Program in Quantitative Methods.
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Merit-Based Scholarship},
+    Bilkent University
+  }{2019--2020}
+}
+
+\sectiongap
+
+% ================================================================
+% METHODS TRAINING AND CERTIFICATES
+% ================================================================
+
+\cvrow{Methods Training\\\& Certificates}{%
+  \datedline{%
+    \textbf{From Text to Insights:
+    Building and Analyzing Custom Event Data}
+  }{11--15 Aug. 2025}
+
+  ICPSR Summer Program in Quantitative Methods of Social Research,
+  University of Michigan (online)
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{EITM Certification:
+    Machine Learning Applications in Social Science Research}
+  }{2025}
+
+  ICPSR Summer Program in Quantitative Methods of Social Research,
+  University of Michigan
+}
+
+\entrygap
+
+\cvrow{}{%
+  \datedline{%
+    \textbf{Participation Certificate},
+    Erasmus+ Programme
+  }{2020}
+
+  \textit{Make It Visible: Working with Young People Against
+  (Invisible) Racism}\\
+  Stand Together Against Racism Online Project
+}
+
+\sectiongap
+
+% ================================================================
+% POLICY AND PROFESSIONAL EXPERIENCE
+% ================================================================
+
+\cvrow{Policy \&\\Professional\\Experience}{%
+  \datedline{%
+    \textbf{Intern}, United Nations Children's Fund (UNICEF),
+    Ankara, Turkey
+  }{Sep. 2021--Jan. 2022}
+}
+
+\end{document}

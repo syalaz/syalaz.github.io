@@ -6,9 +6,11 @@ pagetitle: "Contact · Seray Yalaz"
 <h1>Contact</h1>
 
 <p class="contact-block">
-Placeholder Institution<br />
-Placeholder Department, Office Placeholder<br />
-Placeholder City, State ZIP<br />
-<a href="mailto:sy2425a@american.edu">sy2425a@american.edu</a>
+American University<br />
+School of International Service<br />
+Washington, DC 20016, United States<br />
+<a class="js-email" href="contact.qmd" data-user="sy2425a" data-domain="american.edu">sy2425a [at] american [dot] edu</a>
 </p>
+
+<p><a class="contact-btn" href="https://www.american.edu/profiles/students/sy2425a.cfm" target="_blank" rel="noopener"><i class="fa-solid fa-user"></i> Department profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
 </div>
