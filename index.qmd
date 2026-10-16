@@ -13,6 +13,6 @@ pagetitle: "Seray Yalaz"
 <p class="bio">I study political violence and the political economy of conflict. My research asks why armed organizations adopt violent and nonviolent tactics, why they shift among them, and how the economic and social relationships through which they compete shape these choices. My research uses original data, computational text analysis, and quantitative methods to study armed groups’ violent and nonviolent tactics.</p>
 <p class="bio">Why do some armed organizations target businesses and other economic actors while others do not, and why do these patterns change across and within organizations over time? My dissertation, “Businesses and Rebel Violence in Civil Conflicts,” examines these questions. To test this argument, I am constructing a new event-level dataset for Colombia from online archives using an LLM-assisted information-extraction procedure that builds on recent advances in custom event data.</p>
 <p class="bio">Before coming to American University, I earned my M.A. (2022) and B.A. (2020) in International Relations from the <a href="http://feass.bilkent.edu.tr" target="_blank" rel="noopener">Faculty of Economics, Administrative and Social Sciences</a> at <a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener">Bilkent University</a> in Ankara, Turkey.</p>
-<p class="bio">Please reach me at sy2425a [at] american [dot] edu.</p>
+<p class="bio contact-line">Please reach me at sy2425a [at] american [dot] edu.</p>
 </div>
 </div>

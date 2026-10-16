@@ -256,6 +256,7 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
 .home .hero { margin-bottom: 0; }
 .home .bio:last-child { margin-bottom: 0; }
 .home .bio { margin: 0 0 1.1rem; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.home .contact-line { font-size: 0.9em; }
 .photo-frame .role { margin: 0.9rem 0 0; text-align: center; font-size: 0.88rem; line-height: 1.5; }
 .photo-frame .role strong { color: var(--text); font-weight: 600; }
 
